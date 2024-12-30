@@ -22,8 +22,8 @@ export class AboutComponent {
         { label: 'Employment Status', detail: 'Homeless' },
         { label: 'Salary', detail: 'PHP 0.23 per month' }
       ],
-      linkedin: 'sample',
-      github: 'sample',
+      linkedin: '',
+      github: 'lmcay',
       isDetailsShown: false
     },
     {
@@ -36,10 +36,10 @@ export class AboutComponent {
         { label: 'Gender', detail: 'Male' },
         { label: 'Email', detail: 'santiagobryan831@gmail.com' },
         { label: 'Employment Status', detail: 'Married' },
-        { label: 'Salary', detail: 'PHP 500,00.00 per month' }
+        { label: 'Salary', detail: 'PHP 500,000.00 per month' }
       ],
-      linkedin: 'sample',
-      github: 'sample',
+      linkedin: '',
+      github: 'bancantcode',
       isDetailsShown: false
 
     },
@@ -53,7 +53,7 @@ export class AboutComponent {
         { label: 'Gender', detail: 'Male' },
         { label: 'Email', detail: 'jimvdz@protonmail.com' },
         { label: 'Employment Status', detail: 'Student and Single' },
-        { label: 'Salary', detail: 'PHP 722,00.00 per month' }
+        { label: 'Salary', detail: 'PHP 722,000.00 per month' }
       ],
       linkedin: 'jimwel-valdez',
       github: 'jimvdz',
