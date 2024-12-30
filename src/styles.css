@@ -37,6 +37,36 @@
     font-style: normal;
 }
 
+@layer base {
+    h1 {
+        @apply font-title text-heading-2 md:text-heading-1;   
+    }
+    h2 {
+        @apply font-title text-heading-2;
+    }
+    p {
+        @apply font-body;
+    }
+}
+
+@layer components {
+    .lead-light {
+        @apply text-base-small text-quaternary;
+    }
+
+    .btn-outlined {
+        @apply border border-white rounded-full w-full py-2 px-6;
+    }
+
+    .btn-content-arrow {
+        @apply flex flex-row justify-between items-center text-white font-body text-base;
+    }
+
+    .grid-style {
+        @apply grid grid-cols-4 gap-xs md:grid-cols-10 lg:grid-cols-12;
+    }
+}
+
 :root {
     --tw-bg-opacity: 1;
     --tw-text-opacity: 1;
@@ -46,5 +76,6 @@
     --body-medium: 'NM', sans-serif;
     --body-medium-italic: 'NMI', sans-serif;
 }
+
 
 
