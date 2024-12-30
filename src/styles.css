@@ -63,7 +63,7 @@
     }
 
     .grid-style {
-        @apply grid grid-cols-4 gap-x-xs md:grid-cols-9 lg:grid-cols-12 py-lg px-xs md:px-sm lg:px-xl w-full;
+        @apply grid grid-cols-4 gap-x-xs md:grid-cols-9 lg:grid-cols-12 py-lg px-xs md:px-lg lg:px-xl w-full;
     }
 
     .box1 {
