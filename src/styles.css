@@ -39,7 +39,7 @@
 
 @layer base {
     h1 {
-        @apply font-title text-heading-1;   
+        @apply font-title text-heading-2 md:text-heading-1;   
     }
     h2 {
         @apply font-title text-heading-2;
@@ -87,6 +87,21 @@
 
     .profile-addtl {
         @apply md:ml-auto flex flex-col items-center md:items-end md:justify-between gap-lg;
+
+    .grid-style {
+        @apply grid grid-cols-4 gap-x-xs md:grid-cols-9 lg:grid-cols-12 py-lg px-xs md:px-lg lg:px-xl w-full;
+    }
+
+    .box1 {
+        @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-1 md:col-span-3 md:p-sm lg:col-start-1 lg:col-span-4 lg:p-lg;
+    }
+
+    .box2 {
+        @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-4 md:col-span-3 md:p-sm lg:col-start-5 lg:col-span-4 lg:p-lg;
+    }
+
+    .box3 {
+        @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-7 md:col-span-3 md:p-sm lg:col-start-9 lg:col-span-4 lg:p-lg;
     }
 }
 
@@ -99,5 +114,6 @@
     --body-medium: 'NM', sans-serif;
     --body-medium-italic: 'NMI', sans-serif;
 }
+
 
 
