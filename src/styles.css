@@ -66,7 +66,27 @@
     }
 
     .mission-block {
-        @apply bg-secondary rounded-lg flex flex-col items-center px-sm py-md gap-sm;
+        @apply bg-secondary rounded-lg flex flex-col items-center px-sm py-lg gap-sm;
+    }
+
+    .profiles {
+        @apply flex flex-col gap-sm;
+    }
+
+    .profile {
+        @apply mx-auto w-full max-w-screen-md bg-secondary rounded-lg p-lg text-center md:text-left;
+    }
+
+    .profile-head {
+        @apply flex flex-col md:flex-row items-center md:items-stretch gap-sm md:gap-0;
+    }
+
+    .profile-intro {
+        @apply flex flex-col md:justify-center;
+    }
+
+    .profile-addtl {
+        @apply md:ml-auto flex flex-col items-center md:items-end md:justify-between gap-lg;
     }
 }
 
