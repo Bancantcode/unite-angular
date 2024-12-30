@@ -29,7 +29,7 @@
             <p class="text-quaternary">Your brand's identity is crucial to its success. At Unite, we believe in creating unique, memorable brand experiences that resonate with your target audience, from logo design to complete branding packages and marketing strategies.</p>
         </div>
         <div class="mission-block">
-            <img class="pb-2xs" src="/assets/icons/mission-1.svg" alt="Handshake icon">
+            <img class="pb-2xs" src="/assets/icons/mission-3.svg" alt="Handshake icon">
             <h4 class="text-heading-4 text-quaternary font-body-medium">CLIENT COLLABORATION</h4>
             <p class="text-quaternary">We are dedicated to building strong, lasting relationships with our clients. We understand the importance of communication and collaboration, ensuring every project is aligned with your goals, values, and needs.</p>
         </div>
@@ -50,72 +50,26 @@
     <h1 class="text-quaternary text-center leading-none mb-xl">MEET THE <span class="text-fifth">TEAM</span></h1>
 
     <!-- Profiles -->
+    <!-- Every profile iterates by using Angular directives such as ngFor, ngIf, and ngIfElse. -->
     <div class="profiles">
 
-        <!-- Profile 1 -->
-        <div class="profile">
+        <div *ngFor="let person of people; let i = index" class="profile ">
+
             <div class="profile-head">
-                <img class="rounded-full w-3xl md:mr-lg" src="/assets/images/placeholder-hanni.webp" alt="Profile photo of Hanni">
+                <img class="rounded-full w-3xl md:mr-lg" src="{{ person.imageUrl }}" alt="Profile photo of {{ person.name }}">
                 <div class="profile-intro">
-                    <h4 class="text-heading-4 text-quaternary font-body-medium name">LUIS MIGUEL CAYANAN</h4>
-                    <p class="text-quaternary opacity-70">Front-End Developer</p>
+                    <h4 class="text-heading-4 text-quaternary font-body-medium name">{{ person.name }}</h4>
+                    <p class="text-quaternary opacity-70">{{ person.title }}</p>
                 </div>
                 <div class="profile-addtl">
                     <div class="profile-links flex flex-row gap-1">
-                        <a href="https://github.com" target="_blank"><img src="/assets/icons/about-github.svg" alt="GitHub icon"></a>
-                        <a href="https://linkedin.com" target="_blank"><img src="/assets/icons/about-linkedin.svg" alt="LinkedIn icon"></a>
-                        <a href="mailto:example@example.com" target="_blank"><img src="/assets/icons/about-email.svg" alt="Email icon"></a>
+                        <a href="https://github.com/{{ person.github }}" target="_blank"><img src="/assets/icons/about-github.svg" alt="GitHub icon"></a>
+                        <a href="https://linkedin.com/in/{{ person.linkedin }}" target="_blank"><img src="/assets/icons/about-linkedin.svg" alt="LinkedIn icon"></a>
+                        <a href="mailto:{{ person.profileInfo[3].detail }}" target="_blank"><img src="/assets/icons/about-email.svg" alt="Email icon"></a>
                     </div>
-                    <button class="btn-outlined pr-4 w-40">
-                        <div class="btn-content-arrow">
-                            <span>More Details</span>
-                            <img src="/assets/icons/arrow-down.svg" alt="Arrow down">
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
 
-        <!-- Profile 2 -->
-        <div class="profile">
-            <div class="profile-head">
-                <img class="rounded-full w-3xl md:mr-lg" src="/assets/images/placeholder-hanni.webp" alt="Profile photo of Hanni">
-                <div class="profile-intro">
-                    <h4 class="text-heading-4 text-quaternary font-body-medium name">BRYAN AARON SANTIAGO</h4>
-                    <p class="text-quaternary opacity-70">Front-End Developer</p>
-                </div>
-                <div class="profile-addtl">
-                    <div class="profile-links flex flex-row gap-1">
-                        <a href="https://github.com" target="_blank"><img src="/assets/icons/about-github.svg" alt="GitHub icon"></a>
-                        <a href="https://linkedin.com" target="_blank"><img src="/assets/icons/about-linkedin.svg" alt="LinkedIn icon"></a>
-                        <a href="mailto:example@example.com" target="_blank"><img src="/assets/icons/about-email.svg" alt="Email icon"></a>
-                    </div>
-                    <button class="btn-outlined pr-4 w-40">
-                        <div class="btn-content-arrow">
-                            <span>More Details</span>
-                            <img src="/assets/icons/arrow-down.svg" alt="Arrow down">
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Profile 3 -->
-        <div class="profile">
-
-            <div class="profile-head">
-                <img class="rounded-full w-3xl md:mr-lg" src="/assets/images/placeholder-hanni.webp" alt="Profile photo of Hanni">
-                <div class="profile-intro">
-                    <h4 class="text-heading-4 text-quaternary font-body-medium name">JIMWEL VALDEZ</h4>
-                    <p class="text-quaternary opacity-70">Front-End Developer</p>
-                </div>
-                <div class="profile-addtl">
-                    <div class="profile-links flex flex-row gap-1">
-                        <a href="https://github.com" target="_blank"><img src="/assets/icons/about-github.svg" alt="GitHub icon"></a>
-                        <a href="https://linkedin.com" target="_blank"><img src="/assets/icons/about-linkedin.svg" alt="LinkedIn icon"></a>
-                        <a href="mailto:example@example.com" target="_blank"><img src="/assets/icons/about-email.svg" alt="Email icon"></a>
-                    </div>
-                    <button class="btn-outlined hidden pr-4 w-40">
+                    <!-- If more details is clicked, it will change the isDetailsShown status of the person to true -->
+                    <button *ngIf="!person.isDetailsShown" (click)="people[i].isDetailsShown = !people[i].isDetailsShown" class="btn-outlined pr-4 w-40">
                         <div class="btn-content-arrow">
                             <span>More Details</span>
                             <img src="/assets/icons/arrow-down.svg" alt="Arrow down">
@@ -124,38 +78,15 @@
                 </div>
             </div>
 
-            <div class="profile-body pt-lg grid grid-row-6 grid-flow-row md:grid-cols-2 md:grid-rows-3 md:grid-flow-col gap-md">
-                <div class="profile-info">
-                    <p class="profile-label text-quaternary opacity-70">Employee Number</p>
-                    <p class="profile-detail text-quaternary">20902252</p>
-                </div>
-
-                <div class="profile-info">
-                    <p class="profile-label text-quaternary opacity-70">Full Name</p>
-                    <p class="profile-detail text-quaternary">Jimwel Losito Valdez</p>
-                </div>
-
-                <div class="profile-info">
-                    <p class="profile-label text-quaternary opacity-70">Gender</p>
-                    <p class="profile-detail text-quaternary">Male</p>
-                </div>
-
-                <div class="profile-info">
-                    <p class="profile-label text-quaternary opacity-70">Email</p>
-                    <p class="profile-detail text-quaternary">jimvdz&#64;protonmail.com</p>
-                </div>
-
-                <div class="profile-info">
-                    <p class="profile-label text-quaternary opacity-70">Employment Status</p>
-                    <p class="profile-detail text-quaternary">Student and Single</p>
-                </div>
-
-                <div class="profile-info">
-                    <p class="profile-label text-quaternary opacity-70">Salary</p>
-                    <p class="profile-detail text-quaternary">PHP 123,456.00 per month</p>
+            <!-- These details will show if the user clicked on More Details -->
+            <div *ngIf="person.isDetailsShown" class="profile-body pt-lg grid grid-row-6 grid-flow-row md:grid-cols-2 md:grid-rows-3 md:grid-flow-col gap-md">
+                <div *ngFor="let info of person.profileInfo" class="profile-info">
+                    <p class="profile-label text-quaternary opacity-70">{{ info.label }}</p>
+                    <p class="profile-detail text-quaternary">{{ info.detail }}</p>
                 </div>
             </div>
-            <button class="btn-outlined pr-4 w-40 mt-md ml-auto block">
+
+            <button *ngIf="person.isDetailsShown" (click)="people[i].isDetailsShown = !people[i].isDetailsShown" class="btn-outlined pr-4 w-40 mt-md mr-auto md:mr-0 ml-auto block">
                 <div class="btn-content-arrow">
                     <span>See Less</span>
                     <img src="/assets/icons/arrow-up.svg" alt="Arrow up">
