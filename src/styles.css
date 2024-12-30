@@ -51,7 +51,10 @@
 
 @layer components {
     .lead-light {
-        @apply text-base-small text-quaternary;
+        @apply font-body text-base-small text-quaternary;
+    }
+    .lead-dark {
+        @apply font-body text-base-small text-primary;
     }
 
     .btn-outlined {
@@ -60,6 +63,10 @@
 
     .btn-content-arrow {
         @apply flex flex-row justify-between items-center text-white font-body text-base;
+    }
+
+    .mission-block {
+        @apply bg-secondary rounded-lg flex flex-col items-center px-sm py-md gap-sm;
     }
 }
 
