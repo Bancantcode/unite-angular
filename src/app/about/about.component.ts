@@ -2,6 +2,21 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+interface ProfileInfo {
+  label: string;
+  detail: string;
+}
+
+interface Person {
+  name: string;
+  title: string;
+  imageUrl: string;
+  profileInfo: ProfileInfo[];
+  linkedin: string;
+  github: string;
+  isDetailsShown: boolean;
+}
+
 @Component({
   selector: 'app-about',
   imports: [RouterModule, CommonModule],
@@ -9,7 +24,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  people = [
+  people: Person[] = [
     {
       name: 'LUIS MIGUEL CAYANAN',
       title: 'Front-End Developer',
