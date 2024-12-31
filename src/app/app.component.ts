@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
+import { CommonModule, DatePipe } from '@angular/common';
 
 declare const Lenis: any;
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     RouterOutlet, 
-    RouterModule
+    RouterModule,
+    RouterLink,
+    CommonModule,
+    DatePipe
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -16,6 +20,9 @@ declare const Lenis: any;
 export class AppComponent implements OnInit {
   title = 'unite';
   private lenis: any;
+  isMenuOpen: boolean = false;
+  isHovered: boolean = false;
+  currentTime: Date = new Date();
 
   ngOnInit() {
     this.lenis = new Lenis();
@@ -26,5 +33,19 @@ export class AppComponent implements OnInit {
     };
 
     requestAnimationFrame(raf);
+
+    setInterval(() => {
+      this.currentTime = new Date();
+    }, 60000);
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) {
+      this.lenis.stop();
+    } 
+    else {
+      this.lenis.start();
+    }
   }
 }

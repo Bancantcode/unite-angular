@@ -104,6 +104,14 @@
     .box3 {
         @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-7 md:col-span-3 md:p-sm lg:col-start-9 lg:col-span-4 lg:p-lg;
     }
+
+    .button {
+        @apply z-50 relative flex items-center justify-center gap-2 bg-primary/70 backdrop-blur-sm px-4 py-2 rounded-lg;
+    }
+
+    .trans-duration {
+        @apply transition-all duration-300;
+    }
 }
 
 :root {
