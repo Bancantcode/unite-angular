@@ -45,7 +45,7 @@
         @apply font-title text-heading-2;
     }
     p {
-        @apply font-body;
+        @apply font-body text-base;
     }
 }
 
