@@ -8,6 +8,13 @@ interface Service {
   link: string;
 }
 
+interface ServiceImage {
+  name: string;
+  src: string;
+  link: string;
+  alt: string;
+}
+
 @Component({
   selector: 'app-home',
   imports: [
@@ -18,6 +25,27 @@ interface Service {
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  serviceImages: ServiceImage[] = [
+    {
+      name: 'Frontend Development',
+      src: 'services-frontend-2.webp',
+      link: '/services',
+      alt: 'Frontend image'
+    },
+    {
+      name: 'Web Design',
+      src: 'services-seo-1.webp',
+      link: '/services',
+      alt: 'Web design image'
+    },
+    {
+      name: 'SEO Optimization',
+      src: 'services-web-design-3.webp',
+      link: '/services',
+      alt: 'Seo image'
+    }
+  ];
+
   services: Service[] = [
     {
       title: 'Frontend Development',
@@ -35,4 +63,12 @@ export class HomeComponent {
       link: '#'
     }
   ];
+
+  currentImageIndex = 0;
+
+  ngOnInit() {
+    setInterval(() => {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.serviceImages.length;
+    }, 5000);
+  }
 }

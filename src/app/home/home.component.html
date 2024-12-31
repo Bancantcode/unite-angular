@@ -4,6 +4,24 @@
     <section class="relative">
         <div class="absolute h-screen w-screen bg-primary opacity-50"></div>
         <img class="h-screen w-screen object-cover" src="hero-image.webp" alt="Unite Hero Image">
+        <div class="grid-style absolute inset-0 items-center">
+
+            <div class="col-span-4 md:col-span-8">
+                <h1 class="text-tertiary font-body-medium leading-none">Helping authentic<br/>brands create<br/><span class="text-fifth">websites</span></h1>
+                <div class="flex gap-4 mt-8">
+                    <a routerLink="/services" class="bg-quaternary text-primary font-medium px-6 py-3 rounded-lg">Our Services</a>
+                    <a routerLink="/contact" class="bg-secondary text-tertiary font-medium px-6 py-3 rounded-lg">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hidden flex flex-col col-span-4 md:block lg:col-span-4 lg:col-start-9 xl:col-start-10">
+                <a [routerLink]="serviceImages[currentImageIndex].link"><img class="rounded-lg aspect-video object-cover mb-2xs" [src]="serviceImages[currentImageIndex].src" [alt]="serviceImages[currentImageIndex].alt"></a>
+                <div class="flex justify-between text-tertiary">
+                    <h5 class="text-heading-5">{{ serviceImages[currentImageIndex].name }}</h5>
+                    <a [routerLink]="serviceImages[currentImageIndex].link"><i class="ri-arrow-right-line text-heading-5"></i></a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <section class="text-tertiary font-title mx-auto leading-none px-xs py-xl md:px-sm lg:px-xl lg:max-w-7xl lg:py-3xl">
@@ -70,13 +88,16 @@
         <span class="col-span-3">[WHAT WE OFFER]</span>
         <h1 class="col-span-4 col-start-1 leading-none mb-lg md:col-span-5 md:col-start-1 lg:col-span-8 lg:col-start-1">YOUR JOURNEY STARTS HERE</h1>
 
-        <div [class]="'box' + (i + 1)" *ngFor="let service of services; let i = index">
-            <span class="bg-fifth text-base rounded-lg py-3xs px-sm font-medium">{{ service.title }}</span>
-            <div class="flex flex-col gap-y-12 lg:gap-y-20 pt-md">
-                <h5 class="text-heading-5 leading-7">{{ service.description }}</h5>
-                <div class="flex justify-between">
-                    <a [href]="service.link" class="underline text-base">See more</a>
-                    <a [href]="service.link"><i class="ri-arrow-right-up-line text-heading-5 cursor-pointer"></i></a>
+        <!-- Add grid container for services -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md col-span-full">
+            <div [class]="'bg-white rounded-lg p-md md:p-sm lg:p-lg box' + (i + 1)" *ngFor="let service of services; let i = index">
+                <span class="bg-fifth text-base rounded-lg py-3xs px-sm font-medium">{{ service.title }}</span>
+                <div class="flex flex-col gap-y-12 lg:gap-y-20 pt-md">
+                    <h5 class="text-heading-5 leading-7">{{ service.description }}</h5>
+                    <div class="flex justify-between">
+                        <a [href]="service.link" class="underline text-base">See more</a>
+                        <a [href]="service.link"><i class="ri-arrow-right-up-line text-heading-5 cursor-pointer"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
