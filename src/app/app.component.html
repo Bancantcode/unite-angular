@@ -22,7 +22,7 @@
   </header>
 
   <!-- onclicked nav -->
-  <div class="fixed inset-0 bg-primary z-40 transition-all duration-500" [class.opacity-0]="!isMenuOpen" [class.pointer-events-none]="!isMenuOpen" [class.opacity-100]="isMenuOpen" [class.no-scroll]="isMenuOpen">
+  <div class="fixed inset-0 bg-primary z-40 transition-all duration-500 opacity-0 pointer-events-none" [class.opacity-0]="!isMenuOpen" [class.pointer-events-none]="!isMenuOpen" [class.opacity-100]="isMenuOpen" [class.no-scroll]="isMenuOpen">
     <nav class="h-screen w-screen flex items-center justify-center">
       <ul class="text-center space-y-8">
         <li class="trans-duration transform" [class.translate-y-0]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.-translate-y-4]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
