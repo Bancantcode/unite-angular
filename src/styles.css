@@ -39,7 +39,7 @@
 
 @layer base {
     h1 {
-        @apply font-title text-heading-1;   
+        @apply font-title text-heading-2 md:text-heading-1;   
     }
     h2 {
         @apply font-title text-heading-2;
@@ -51,7 +51,10 @@
 
 @layer components {
     .lead-light {
-        @apply text-base-small text-quaternary;
+        @apply font-body text-base-small text-quaternary;
+    }
+    .lead-dark {
+        @apply font-body text-base-small text-primary;
     }
 
     .btn-outlined {
@@ -60,6 +63,54 @@
 
     .btn-content-arrow {
         @apply flex flex-row justify-between items-center text-white font-body text-base;
+    }
+
+    .mission-block {
+        @apply bg-secondary rounded-lg flex flex-col items-center px-sm py-lg gap-sm basis-full;
+    }
+
+    .profiles {
+        @apply flex flex-col gap-sm;
+    }
+
+    .profile {
+        @apply mx-auto w-full max-w-screen-md bg-secondary rounded-lg p-lg text-center md:text-left;
+    }
+
+    .profile-head {
+        @apply flex flex-col md:flex-row items-center md:items-stretch gap-sm md:gap-0;
+    }
+
+    .profile-intro {
+        @apply flex flex-col md:justify-center;
+    }
+
+    .profile-addtl {
+        @apply md:ml-auto flex flex-col items-center md:items-end md:justify-between gap-lg;
+    }
+
+    .grid-style {
+        @apply grid grid-cols-4 gap-x-xs md:grid-cols-9 lg:grid-cols-12 py-lg px-xs md:px-lg lg:px-xl w-full;
+    }
+
+    .box1 {
+        @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-1 md:col-span-3 md:p-sm lg:col-start-1 lg:col-span-4 lg:p-lg;
+    }
+
+    .box2 {
+        @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-4 md:col-span-3 md:p-sm lg:col-start-5 lg:col-span-4 lg:p-lg;
+    }
+
+    .box3 {
+        @apply bg-white rounded-lg col-start-1 col-span-4 p-md mb-sm md:col-start-7 md:col-span-3 md:p-sm lg:col-start-9 lg:col-span-4 lg:p-lg;
+    }
+
+    .button {
+        @apply z-50 relative flex items-center justify-center gap-2 bg-primary/70 backdrop-blur-sm px-4 py-2 rounded-lg;
+    }
+
+    .trans-duration {
+        @apply transition-all duration-300;
     }
 }
 
@@ -72,5 +123,6 @@
     --body-medium: 'NM', sans-serif;
     --body-medium-italic: 'NMI', sans-serif;
 }
+
 
 

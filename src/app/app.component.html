@@ -1,4 +1,45 @@
 <main>
-  <p class="text-base text-fifth text-center bg-primary p-4 font-body-medium ">Hello World!</p>
+  <header class="absolute z-50 grid grid-cols-3 items-center w-full text-tertiary px-xs md:px-sm lg:px-xl py-2xs">
+    <div class="justify-self-start col-span-2 md:col-span-1">
+      <!-- tablet - desktop logo -->
+      <a routerLink="/"><img src="logo-full.webp" alt="Unite Logo" width="100" height="100" class="hidden md:block"></a>
+      <!-- mobile logo -->
+      <a routerLink="/"><img src="logo-small.webp" alt="Unite Logo" width="80" height="80" class="block md:hidden"></a>
+    </div>
+
+    <span class="hidden md:block justify-self-center text-base trans-duration" [class.opacity-0]="isMenuOpen">LOCAL TIME: {{ currentTime | date:'h:mm a' }}, PHILIPPINES</span>
+
+    <div class="justify-self-end">
+      <button (click)="toggleMenu()" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" class="button">
+        <span class="text-tertiary overflow-hidden trans-duration uppercase tracking-wider" [class.w-0]="isMenuOpen" [class.opacity-0]="isMenuOpen" [class.w-16]="!isMenuOpen" [class.opacity-100]="!isMenuOpen">Menu</span>
+        <div class="w-8 h-8 relative bg-secondary rounded-full flex items-center justify-center p-sm">
+          <span class="absolute w-5 h-0.5 bg-tertiary trans-duration" [class.rotate-45]="isMenuOpen" [class.translate-y-0]="isMenuOpen" [class.-translate-y-2]="!isMenuOpen"></span>
+          <span class="absolute w-5 h-0.5 bg-tertiary trans-duration" [class.opacity-0]="isMenuOpen"></span>
+          <span class="absolute w-5 h-0.5 bg-tertiary trans-duration" [class.-rotate-45]="isMenuOpen" [class.translate-y-0]="isMenuOpen" [class.translate-y-2]="!isMenuOpen"></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- onclicked nav -->
+  <div class="fixed inset-0 bg-primary z-40 transition-all duration-500 opacity-0 pointer-events-none" [class.opacity-0]="!isMenuOpen" [class.pointer-events-none]="!isMenuOpen" [class.opacity-100]="isMenuOpen" [class.no-scroll]="isMenuOpen">
+    <nav class="h-screen w-screen flex items-center justify-center">
+      <ul class="text-center space-y-8">
+        <li class="trans-duration transform" [class.translate-y-0]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.-translate-y-4]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
+          <a routerLink="/" (click)="toggleMenu()" class="text-tertiary text-heading-1 leading-tight font-title hover:text-tertiary">Home</a>
+        </li>
+        <li class="trans-duration transform delay-100" [class.translate-y-0]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.-translate-y-4]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
+          <a routerLink="/about" (click)="toggleMenu()" class="text-tertiary text-heading-1 leading-tight font-title hover:text-tertiary">About</a>
+        </li>
+        <li class="trans-duration transform delay-200" [class.translate-y-0]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.-translate-y-4]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
+          <a routerLink="/services" (click)="toggleMenu()" class="text-tertiary text-heading-1 leading-tight font-title hover:text-tertiary">Services</a>
+        </li>
+        <li class="trans-duration transform delay-300" [class.translate-y-0]="isMenuOpen" [class.opacity-100]="isMenuOpen" [class.-translate-y-4]="!isMenuOpen" [class.opacity-0]="!isMenuOpen">
+          <a routerLink="/contact" (click)="toggleMenu()" class="text-tertiary text-heading-1 leading-tight font-title hover:text-tertiary">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </main>
+
 <router-outlet />
