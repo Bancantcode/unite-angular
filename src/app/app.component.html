@@ -2,9 +2,9 @@
   <header class="absolute z-50 grid grid-cols-3 items-center w-full text-tertiary px-xs md:px-sm lg:px-xl py-2xs">
     <div class="justify-self-start col-span-2 md:col-span-1">
       <!-- tablet - desktop logo -->
-      <img src="logo-full.webp" alt="Unite Logo" width="100" height="100" class="hidden md:block">
+      <a routerLink="/"><img src="logo-full.webp" alt="Unite Logo" width="100" height="100" class="hidden md:block"></a>
       <!-- mobile logo -->
-      <img src="logo-small.webp" alt="Unite Logo" width="80" height="80" class="block md:hidden">
+      <a routerLink="/"><img src="logo-small.webp" alt="Unite Logo" width="80" height="80" class="block md:hidden"></a>
     </div>
 
     <span class="hidden md:block justify-self-center text-base trans-duration" [class.opacity-0]="isMenuOpen">LOCAL TIME: {{ currentTime | date:'h:mm a' }}, PHILIPPINES</span>
