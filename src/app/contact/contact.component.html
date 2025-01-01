@@ -1,12 +1,11 @@
-<main>
-  <section class="contact-section pt-3xl p-lg text-quaternary">
+<!-- Landing Page made with <3 by Luis Cayanan (lmcay). -->
+
+<main class="pt-xl px-xs md:px-lg lg:px-xl">
+  <section class="contact-section pt-3xl text-quaternary">
     <div class="contact-header md:flex md:gap-5">
-      <p class="text-gray-500 text-center leading-none text-2xl md:w-1/2 md:text-start">Your vision, our code<br />
-        <span
-          class="text-fifth uppercase text-center text-heading-1 font-title md:text-start"
-        >
-          Let's unite?
-        </span>
+      <p class="text-center leading-none text-2xl md:w-1/2 md:text-start text-tertiary/60 text-heading-3 tracking-tight mb-3xs">Your vision, our code<br />
+        <span class="text-tertiary uppercase text-center text-8xl font-title md:text-start">Let's <span class="text-fifth">unite?</span></span>
+        
       </p>
 
       <h4
@@ -65,12 +64,10 @@
           ></textarea>
         </div>
 
-        <button
-          type="submit"
-          class="w-1/2 bg-white text-gray-900 uppercase py-2 rounded-lg hover:bg-gray-200 mt-9"
-        >
-          Connect
-        </button>
+        <div class="flex justify-between items-center border border-quaternary border-solid rounded-lg py-2xs px-sm w-1/2">
+          <a routerLink="/contact" class="text-base font-medium font-body">CONNECT</a>
+          <a routerLink="/contact"><i class="ri-arrow-right-line text-xl"></i></a>
+        </div>
       </form>
       <div class="hidden md:block w-1/2">
         <iframe
@@ -86,4 +83,40 @@
       </div>
     </div>
   </section>
+
 </main>
+<footer class="text-tertiary font-title border-t-2 border-tertiary py-lg mt-lg px-xs md:px-lg lg:px-xl">
+  <div class="flex flex-col md:flex-row justify-between items-center mb-lg">
+      <div class="flex gap-x-6 text-heading-2">
+          <a class="" routerLink="/about">ABOUT</a>
+          <a class="" routerLink="/services">SERVICES</a>
+          <a class="" routerLink="/contact">CONTACT</a>
+      </div>
+      
+      <div class="text-heading-4 flex gap-x-6">
+          <i class="cursor-pointer ri-instagram-line"></i>
+          <i class="cursor-pointer ri-github-line"></i>
+          <i class="cursor-pointer ri-linkedin-fill"></i>
+      </div>
+  </div>
+
+  <div class="flex flex-col md:items-center md:flex-row md:justify-between">
+      <div class="flex items-center">
+          <img class="leading-none" src="logo-small.webp" alt="Logo" width="80" height="80">
+          <div class="leading-none text-heading-5">
+              <a class="text-tertiary/60" routerLink="/">UNITE</a>
+              <p class="font-title text-heading-5">2024 &copy; ALL RIGHTS RESERVED</p>
+          </div>
+      </div>
+      <div class="leading-none flex flex-col items-end md:items-start">
+          <p class="font-title text-heading-5 text-tertiary/60">CREDITS</p>
+          <div class="">
+              <p class="font-title text-heading-5">DESIGN BY
+                  <a class="pl-2" target="_blank" href="https://github.com/Bancantcode">BANCANTCODE</a>
+                  <a class="pl-2" target="_blank" href="https://github.com/lmcay">LMCAY</a>
+                  <a class="pl-2" target="_blank" href="https://github.com/jimvdz">JIMVDZ</a>
+              </p>
+          </div>
+      </div>
+  </div>
+</footer>
